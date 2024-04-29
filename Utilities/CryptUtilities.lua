@@ -18,7 +18,7 @@
         Other: 
 ]]
 
-local Utils = loadstring(game:HttpGet(""))()
+local Utils = loadstring(game:HttpGet("https://github.com/ARK-Mercenary/Roblox-Mercenary/raw/main/Utilities/Utilities.lua"))()
 
 local CryptUtilities = {} do
     CryptUtilities.Encrypt = crypt.encrypt
