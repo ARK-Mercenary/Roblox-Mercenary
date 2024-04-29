@@ -14,11 +14,11 @@ local Utilities = {} do
     Utilities.Folder = "Mercenary/Utilities/"
 
     function Utilities:SendWebhookMessage(url, message, embed)
-        task.spawn(function()
-            if not url or not message or not embed then
-                return
-            end
-            
+        if not url or not message or not embed then
+            return
+        end
+
+        task.spawn(function()            
             HTTPRequest({
                 Url = url,
                 Method = "POST",
