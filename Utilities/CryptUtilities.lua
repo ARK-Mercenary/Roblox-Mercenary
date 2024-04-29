@@ -1,5 +1,5 @@
 --[[ 
-    This utility library utilizes the built in Executor functions in the 'crypt' table.
+    This Utility file utilizes the built in Executor functions in the 'crypt' table.
     I'm not sure what Executors have these functions, but to my knowledge, 
     Krampus Windows, CodeX Android/iOS, and Hydrogen MacOS both support these functions.
     I have not tested any other Executor. I think Wave Windows, and Acerus X Android/iOS work but I don't know.
@@ -18,7 +18,7 @@
         Other: 
 ]]
 
-local KleenexUtils = loadstring(game:HttpGet(""))()
+local Utils = loadstring(game:HttpGet(""))()
 
 local CryptUtilities = {} do
     CryptUtilities.Encrypt = crypt.encrypt
@@ -39,7 +39,7 @@ local CryptUtilities = {} do
 
     function CryptUtilities:MD5(data)
         task.spawn(function()
-            KleenexUtils:CheckFunctionExists(self.Hash)
+            Utils:CheckFunctionExists(self.Hash)
 
             return self.Hash(data, "md5")
         end)
@@ -47,7 +47,7 @@ local CryptUtilities = {} do
 
     function CryptUtilities:SHA1(data)
         task.spawn(function()
-            KleenexUtils:CheckFunctionExists(self.Hash)
+            Utils:CheckFunctionExists(self.Hash)
 
             return self.Hash(data, "sha1")
         end)
@@ -55,7 +55,7 @@ local CryptUtilities = {} do
 
     function CryptUtilities:SHA224(data)
         task.spawn(function()
-            KleenexUtils:CheckFunctionExists(self.Hash)
+            Utils:CheckFunctionExists(self.Hash)
 
             return self.Hash(data, "sha3-224")
         end)
@@ -63,7 +63,7 @@ local CryptUtilities = {} do
 
     function CryptUtilities:SHA256(data)
         task.spawn(function()
-            KleenexUtils:CheckFunctionExists(self.Hash)
+            Utils:CheckFunctionExists(self.Hash)
 
             return self.Hash(data, "sha3-256")
         end)
@@ -71,7 +71,7 @@ local CryptUtilities = {} do
 
     function CryptUtilities:SHA512(data)
         task.spawn(function()
-            KleenexUtils:CheckFunctionExists(self.Hash)
+            Utils:CheckFunctionExists(self.Hash)
 
             return self.Hash(data, "sha3-512")
         end)
