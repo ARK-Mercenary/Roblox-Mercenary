@@ -15,7 +15,6 @@ local Utilities = {} do
 
     function Utilities:SendWebhookMessage(url, message, embed)
         task.spawn(function()
-            if not #url > 0 then return end
             if not url or not message or not embed then
                 return
             end
