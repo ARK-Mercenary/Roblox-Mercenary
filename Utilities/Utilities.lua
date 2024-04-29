@@ -58,7 +58,7 @@ local Utilities = {} do
         if not isfolder(self.Folder) then 
             makefolder(self.Folder) end
         if not isfile(self.Folder .. "Executions.txt") then  
-            writefile(self.Folder .. "Executions.txt", "1") end
+            writefile(self.Folder .. "Executions.txt", "0") end
         
         writefile(self.Folder .. "Executions.txt", tostring(readfile(self.Folder .. "Executions.txt") or 0) + 1)
         
