@@ -10,10 +10,10 @@ local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 local LocalPlayer = Players.LocalPlayer
 
-local KleenexUtilities = {} do
-    KleenexUtilities.Folder = "Kleenex/Utilities/"
+local Utilities = {} do
+    Utilities.Folder = "Mercenary/Utilities/"
 
-    function KleenexUtilities:SendWebhookMessage(url, message, embed)
+    function Utilities:SendWebhookMessage(url, message, embed)
         task.spawn(function()
             if not #url > 0 then return end
             if not url or not message or not embed then
@@ -37,7 +37,7 @@ local KleenexUtilities = {} do
         end)
     end
 
-    function KleenexUtilities:CheckFunctionExists(functionName)
+    function Utilities:CheckFunctionExists(functionName)
         task.spawn(function()
             local IsValid = functionName and getgenv()[functionName]
             
@@ -48,7 +48,7 @@ local KleenexUtilities = {} do
         end)
     end
 
-    function KleenexUtilities:CheckFunctionExistsTable(functionNames)
+    function Utilities:CheckFunctionExistsTable(functionNames)
         task.spawn(function()
             for _, functionName in ipairs(functionNames) do
                 local IsValid = functionName and getgenv()[functionName]
@@ -61,7 +61,7 @@ local KleenexUtilities = {} do
         end)
     end
 
-    function KleenexUtilities:GetExecutions()
+    function Utilities:GetExecutions()
         task.spawn(function()
             self:CheckFunctionExistsTable({ "isfolder", "isfile", "makefolder", "makefile" })
 
@@ -76,7 +76,7 @@ local KleenexUtilities = {} do
         end)
     end
 
-    function KleenexUtilities:GetExecutorHWID()
+    function Utilities:GetExecutorHWID()
         task.spawn(function()
             local ExecutorHWID = get_hwid and get_hwid() or gethwid and gethwid() or hwid
             self:CheckFunctionExists(ExecutorHWID)
@@ -85,7 +85,7 @@ local KleenexUtilities = {} do
         end)
     end
 
-    function KleenexUtilities:GetExecutor()
+    function Utilities:GetExecutor()
         task.spawn(function()
             local Executor = identifyexecutor and identifyexecutor() or getexecutorname and getexecutorname()
             self:CheckFunctionExists(Executor)
@@ -94,13 +94,13 @@ local KleenexUtilities = {} do
         end)
     end
 
-    function KleenexUtilities:GetCurrentGame()
+    function Utilities:GetCurrentGame()
         return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
     end
 
-    function KleenexUtilities:GetGameJobId()
+    function Utilities:GetGameJobId()
         return game.JobID
     end
 end
 
-return KleenexUtilities
+return Utilities
