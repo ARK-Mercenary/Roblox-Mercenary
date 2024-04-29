@@ -75,7 +75,7 @@ local Utilities = {} do
         task.spawn(function()
             local ExecutorHWID = get_hwid and get_hwid() or gethwid and gethwid() or hwid
 
-            return tostring(ExecutorHWID)
+            return ExecutorHWID
         end)
     end
 
@@ -83,16 +83,16 @@ local Utilities = {} do
         task.spawn(function()
             local Executor = identifyexecutor and identifyexecutor() or getexecutorname and getexecutorname()
 
-            return tostring(Executor)
+            return Executor
         end)
     end
 
     function Utilities:GetCurrentGame()
-        return tostring(game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+        return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
     end
 
     function Utilities:GetGameJobId()
-        return tostring(game.JobId)
+        return game.JobId
     end
 end
 
