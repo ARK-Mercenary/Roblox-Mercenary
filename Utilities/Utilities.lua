@@ -35,56 +35,46 @@ local Utilities = {} do
     end
 
     function Utilities:CheckFunctionExists(functionName)
-        task.spawn(function()
+        local IsValid = functionName and getgenv()[functionName]
+        
+        if not IsValid then
+            LocalPlayer:Kick(string.format("Executor Not Supported. Missing: %s", functionName))
+            return
+        end
+    end
+
+    function Utilities:CheckFunctionExistsTable(functionNames)
+        for _, functionName in ipairs(functionNames) do
             local IsValid = functionName and getgenv()[functionName]
             
             if not IsValid then
                 LocalPlayer:Kick(string.format("Executor Not Supported. Missing: %s", functionName))
                 return
             end
-        end)
-    end
-
-    function Utilities:CheckFunctionExistsTable(functionNames)
-        task.spawn(function()
-            for _, functionName in ipairs(functionNames) do
-                local IsValid = functionName and getgenv()[functionName]
-                
-                if not IsValid then
-                    LocalPlayer:Kick(string.format("Executor Not Supported. Missing: %s", functionName))
-                    return
-                end
-            end
-        end)
+        end
     end
 
     function Utilities:GetExecutions()
-        task.spawn(function()
-            if not isfolder(self.Folder) then 
-                makefolder(self.Folder) end
-            if not isfile(self.Folder .. "Executions.txt") then  
-                writefile(self.Folder .. "Executions.txt", "1") end
-            
-            writefile(self.Folder .. "Executions.txt", tostring(readfile(self.Folder .. "Executions.txt") or 0) + 1)
-            
-            return tostring(readfile(self.Folder .. "Executions.txt"))
-        end)
+        if not isfolder(self.Folder) then 
+            makefolder(self.Folder) end
+        if not isfile(self.Folder .. "Executions.txt") then  
+            writefile(self.Folder .. "Executions.txt", "1") end
+        
+        writefile(self.Folder .. "Executions.txt", tostring(readfile(self.Folder .. "Executions.txt") or 0) + 1)
+        
+        return tostring(readfile(self.Folder .. "Executions.txt"))
     end
 
     function Utilities:GetExecutorHWID()
-        task.spawn(function()
-            local ExecutorHWID = get_hwid and get_hwid() or gethwid and gethwid() or hwid
+        local ExecutorHWID = get_hwid and get_hwid() or gethwid and gethwid() or hwid
 
-            return ExecutorHWID
-        end)
+        return ExecutorHWID
     end
 
     function Utilities:GetExecutor()
-        task.spawn(function()
-            local Executor = identifyexecutor and identifyexecutor() or getexecutorname and getexecutorname()
+        local Executor = identifyexecutor and identifyexecutor() or getexecutorname and getexecutorname()
 
-            return Executor
-        end)
+        return Executor
     end
 
     function Utilities:GetCurrentGame()
