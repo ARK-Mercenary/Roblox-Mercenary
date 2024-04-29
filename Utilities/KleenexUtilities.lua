@@ -1,3 +1,10 @@
+--[[
+    This Utility file is really only helpful and relevant to the Cheats I create for my friends.
+    However, feel free to use it if it's useful for you. I occasionally update it to add more Utilities 
+    I frequently use. Code can probably be optimized or remade better, I don't really code in LUA other than to
+    make Roblox Cheats for my friends or myself.
+]]
+
 local HTTPRequest = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
