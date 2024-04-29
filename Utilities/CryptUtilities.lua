@@ -18,8 +18,6 @@
         Other: 
 ]]
 
-local Utils = loadstring(game:HttpGet("https://github.com/ARK-Mercenary/Roblox-Mercenary/raw/main/Utilities/Utilities.lua"))()
-
 local CryptUtilities = {} do
     CryptUtilities.Encrypt = crypt.encrypt
     CryptUtilities.Decrypt = crypt.decrypt
@@ -34,32 +32,22 @@ local CryptUtilities = {} do
     end
 
     function CryptUtilities:MD5(data)
-        Utils:CheckFunctionExists(self.Hash)
-
         return self.Hash(data, "md5")
     end
 
     function CryptUtilities:SHA1(data)
-        Utils:CheckFunctionExists(self.Hash)
-
         return self.Hash(data, "sha1")
     end
 
     function CryptUtilities:SHA224(data)
-        Utils:CheckFunctionExists(self.Hash)
-
         return self.Hash(data, "sha3-224")
     end
 
     function CryptUtilities:SHA256(data)
-        Utils:CheckFunctionExists(self.Hash)
-
         return self.Hash(data, "sha3-256")
     end
 
     function CryptUtilities:SHA512(data)
-        Utils:CheckFunctionExists(self.Hash)
-
         return self.Hash(data, "sha3-512")
     end
 end
