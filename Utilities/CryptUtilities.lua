@@ -26,55 +26,41 @@ local CryptUtilities = {} do
     CryptUtilities.Hash = crypt.hash
 
     function CryptUtilities:Encrypt(data, key, iv)
-        task.spawn(function()
-            return
-        end)
+        return
     end
 
     function CryptUtilities:Decrypt(data, key, iv)
-        task.spawn(function()
-            return
-        end)
+        return
     end
 
     function CryptUtilities:MD5(data)
-        task.spawn(function()
-            Utils:CheckFunctionExists(self.Hash)
+        Utils:CheckFunctionExists(self.Hash)
 
-            return self.Hash(data, "md5")
-        end)
+        return self.Hash(data, "md5")
     end
 
     function CryptUtilities:SHA1(data)
-        task.spawn(function()
-            Utils:CheckFunctionExists(self.Hash)
+        Utils:CheckFunctionExists(self.Hash)
 
-            return self.Hash(data, "sha1")
-        end)
+        return self.Hash(data, "sha1")
     end
 
     function CryptUtilities:SHA224(data)
-        task.spawn(function()
-            Utils:CheckFunctionExists(self.Hash)
+        Utils:CheckFunctionExists(self.Hash)
 
-            return self.Hash(data, "sha3-224")
-        end)
+        return self.Hash(data, "sha3-224")
     end
 
     function CryptUtilities:SHA256(data)
-        task.spawn(function()
-            Utils:CheckFunctionExists(self.Hash)
+        Utils:CheckFunctionExists(self.Hash)
 
-            return self.Hash(data, "sha3-256")
-        end)
+        return self.Hash(data, "sha3-256")
     end
 
     function CryptUtilities:SHA512(data)
-        task.spawn(function()
-            Utils:CheckFunctionExists(self.Hash)
+        Utils:CheckFunctionExists(self.Hash)
 
-            return self.Hash(data, "sha3-512")
-        end)
+        return self.Hash(data, "sha3-512")
     end
 end
 
