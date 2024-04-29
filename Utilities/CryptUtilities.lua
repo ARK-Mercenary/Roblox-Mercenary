@@ -2,7 +2,7 @@
     This Utility file utilizes the built in Executor functions in the 'crypt' table.
     I'm not sure what Executors have these functions, but to my knowledge, 
     Krampus Windows, CodeX Android/iOS, and Hydrogen MacOS both support these functions.
-    I have not tested any other Executor. I think Wave Windows, and Acerus X Android/iOS work but I don't know.
+    I have not tested any other Executor. I think Wave Windows, and Arceus X Android/iOS work but I don't know.
 
     I've created this utility to simplify the usage of these functions for myself and to enhance the readability of my code for others.
 
