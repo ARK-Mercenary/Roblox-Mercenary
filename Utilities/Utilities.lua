@@ -19,8 +19,6 @@ local Utilities = {} do
             if not url or not message or not embed then
                 return
             end
-
-            self:CheckFunctionExists(HTTPRequest)
             
             HTTPRequest({
                 Url = url,
@@ -63,8 +61,6 @@ local Utilities = {} do
 
     function Utilities:GetExecutions()
         task.spawn(function()
-            self:CheckFunctionExistsTable({ "isfolder", "isfile", "makefolder", "makefile" })
-
             if not isfolder(self.Folder) then 
                 makefolder(self.Folder) end
             if not isfile(self.Folder .. "Executions.txt") then  
@@ -79,7 +75,6 @@ local Utilities = {} do
     function Utilities:GetExecutorHWID()
         task.spawn(function()
             local ExecutorHWID = get_hwid and get_hwid() or gethwid and gethwid() or hwid
-            self:CheckFunctionExists(ExecutorHWID)
 
             return ExecutorHWID
         end)
@@ -88,7 +83,6 @@ local Utilities = {} do
     function Utilities:GetExecutor()
         task.spawn(function()
             local Executor = identifyexecutor and identifyexecutor() or getexecutorname and getexecutorname()
-            self:CheckFunctionExists(Executor)
 
             return Executor
         end)
