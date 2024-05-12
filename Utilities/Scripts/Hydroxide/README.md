@@ -1,6 +1,6 @@
 ## Script
 ```lua
-local owner = "ARK-Mercenary/Roblox-Mercenary/Utilities/Scripts/Hydroxide/"
+local owner = "ARK-Mercenary/Roblox-Mercenary/Utilities/Scripts/Hydroxide"
 
 local function webImport(file)
     return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/%s.lua"):format(owner, file)), file .. '.lua')()
